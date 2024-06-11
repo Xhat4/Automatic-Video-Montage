@@ -1,0 +1,5 @@
+{
+    "python.analysis.extraPaths": [
+        "./moviepy-1.0.3"
+    ]
+}

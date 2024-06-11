@@ -1,0 +1,39 @@
+creacion de funciones{
+
+    medios{
+
+        seleccionar carpeta; done;
+
+        reconocer orden de los recursos; done;
+
+    }
+
+    edicion{
+
+        tiempo recursos; done;
+
+        ordenar recursos por orden establecido en carpeta; done;
+
+        transiciones done;
+
+        efectos; done;
+
+        exportar video;
+
+    }
+
+    opcional{
+        
+        añadir música al video;
+
+    }
+
+}
+
+Requisitos:
+
+pip install moviepy
+pip install scikit-image
+pip install pillow
+pip install numpy
+pip install ffmpeg-python
