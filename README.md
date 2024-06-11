@@ -47,7 +47,8 @@ You can change the parameters in the code in order to adjust frame rate, resolut
 The project is made up of three files, the main called script.py who resize and adjust clips based on aspect ratio, export the final video and call the other two files. The second is called effectts.py which, as its name indicates, is responsible for applying one of the video effects to each of the clips randomly. And the third, transitions.py, which as its name again expresses, applies one of the transitions loaded from ffmpeg randomly at the end of one clip and the beginning of the next.
 
 Video Example:
-[![Video Example](https://raw.githubusercontent.com/Xhat4/Automatic-Video-Montage/main/example.mp4)]
+
+https://github.com/Xhat4/Automatic-Video-Montage/assets/40874493/66df622b-8744-429c-a561-761e255aea74
 
 ## Contribute!
 
