@@ -54,7 +54,7 @@ https://github.com/Xhat4/Automatic-Video-Montage/assets/40874493/66df622b-8744-4
 
 This project is open source originally written by [Xhat4](https://github.com/Xhat4).
 
-You can contribute by reporting bugs or make new functionalities and send a push request.
+You can contribute by reporting bugs or make new functionalities and send a pull request.
 
 ## Contact
 
