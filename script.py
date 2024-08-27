@@ -30,7 +30,7 @@ for clip in clips:
       height = clip.h
       width = clip.w
 
-      aspectRatio = truncate(width / height)
+      aspectRatio = round((width / height), 2)
 
       match aspectRatio:
             case 0.56:
@@ -46,7 +46,7 @@ for clip in clips:
 
                   clipResized = CompositeVideoClip([blurredLeftClip, blurredRightClip, clipCopy], size=(1920,1080))
 
-            case 0.66:
+            case 0.67:
                   print("2:3")
                   clipResized = clip.resize(height=1080)
 
@@ -86,12 +86,14 @@ for clip in clips:
                   crop_height = int((auxClip.w / 16) * 9)
                   y_start = int((auxClip.h - crop_height) / 2)
                   y_end = y_start + crop_height
-                  clipResized = auxClip.crop(y1=y_start, y2=y_end) #clip.crop(x1=x_start, x2=x_end, y1=y_start, y2=y_end).resize(width=1920, height=1080)
+                  clipResized = auxClip.crop(y1=y_start, y2=y_end)
             
-            case 1.77:
+            case 1.78:
                   print("16:9")
                   clipResized = clip.resize(height=1080)
 
+            case _:
+                  print("Aspect ratio not controlled")
 
       clipsResized.append(effects.randomFunction(clipResized))
 
