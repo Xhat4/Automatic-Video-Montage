@@ -6,10 +6,6 @@ import effects
 import transitions
 import shutil
 
-# Function to truncate number with only two decimals
-def truncate(number, decimals=2):
-      return int(number * (10 ** decimals)) / 10 ** decimals
-
 # Function to add blur effect to a video
 def blur(image):
       return gaussian(image.astype(float), sigma=6)
