@@ -14,8 +14,16 @@ def blur(image):
 files = os.listdir("./sources")
 
 # Loop for elements in array files are used to create a clip with a especific duration
-clips = [ImageClip("sources/"+file).set_duration(6)
-      for file in files]
+#clips = [ImageClip("sources/"+file).set_duration(6)
+#      for file in files]
+
+clips = []
+for file in os.listdir("./sources"):
+    path = os.path.join("sources", file)
+    if file.lower().endswith((".jpg", ".jpeg", ".png", ".bmp")):
+        clips.append(ImageClip(path).set_duration(6))
+    elif file.lower().endswith((".mp4", ".mov", ".avi", ".mkv")):
+        clips.append(VideoFileClip(path))
 
 # Create a new array empty for clips with the new size
 clipsResized = []
@@ -88,27 +96,27 @@ for clip in clips:
                   print("16:9")
                   clipResized = clip.resize(height=1080)
 
+            case 1.77:
+                  print("16:9 controlado")
+                  clipResized = clip.resize(height=1080)
             case _:
                   print("Aspect ratio not controlled")
 
       clipsResized.append(effects.randomFunction(clipResized))
 
-# transitions are added
+# transitions with head, body, tail system. This way video clips can have diferent duration than the clips created with images.
 videos = transitions.prepare_clips_with_transitions(clipsResized)
 
-# Concatenate the clips maded from the images
+# Concatenate the clips
 concatClip = concatenate_videoclips(videos, method="compose")
 
 # Change resolution of final video
-finalClip = concatClip.fx(vfx.resize, (1920,1080))
+finalClip = concatClip.fx(vfx.resize, (1920, 1080))
 
-# Export video with a especific name and frame rate
+# Export video
 try:
-      concatClip.write_videofile("test.mp4", fps=24)
-
+    finalClip.write_videofile("test.mp4", fps=24, audio=False)
 finally:
-      # Ensure temporary files are deleted
-      for clip in videos:
-            clip.close()
-
-      shutil.rmtree("temp_clips")
+    for clip in videos:
+        clip.close()
+    shutil.rmtree("temp_clips", ignore_errors=True)
