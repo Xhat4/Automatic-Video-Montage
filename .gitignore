@@ -1,0 +1,25 @@
+# Archivos compilados de Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Archivos de entorno virtual
+venv/
+env/
+
+# Archivos temporales
+*.log
+*.tmp
+*.swp
+*.DS_Store
+
+# Carpetas de fuentes temporales
+sources/
+sources 2/
+test.mp4
+temp_clips\
+
+# Archivos de configuración de IDE
+.vscode/
+.idea/
